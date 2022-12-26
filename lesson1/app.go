@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//vars,defers,cycles,pointers,structs
+//vars,defers,cycles,pointers,structs(classes)
 
 func main() {
 	//fmt.Println(test(20, 30))
@@ -39,26 +39,6 @@ func cycleLearn() {
 		i++
 	}
 
-	fmt.Println(calc(5, 5, "*"))
-}
-
-func calc(a, b int, math string) int {
-	result := 0
-	switch math {
-	case "+":
-		result = a + b
-		break
-	case "-":
-		result = a - b
-		break
-	case "*":
-		result = a * b
-		break
-	case "/":
-		result = a / b
-		break
-	}
-	return result
 }
 
 func deferLearn() {
