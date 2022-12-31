@@ -1,12 +1,13 @@
 package main
 
+import "github.com/mitchellh/mapstructure"
 import "fmt"
 
 //Iterators,map structure
 
 type Point struct {
-	X    int
-	Y    int
+	X    int `mapstructure:"xx"`
+	Y    int `mapstructure:"yy"`
 	Name string
 }
 
@@ -17,6 +18,16 @@ func (p Point) method() { //метод структуры
 func main() {
 	//forRange()
 	mapLearn()
+
+	p1 := map[string]int{
+		"xx": 5,
+		"yy": 10,
+	}
+
+	p2 := Point{}
+	mapstructure.Decode(p1, &p2)
+
+	fmt.Println(p2)
 }
 
 func forRange() {
