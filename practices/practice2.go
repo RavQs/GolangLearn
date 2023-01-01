@@ -10,7 +10,7 @@ func main() {
 	//arr := []int{0, 1, 0, 1, 0}
 	//fmt.Println(FindOdd(arr))
 
-	fmt.Println(convert("abbbcc"))
+	fmt.Println(Convert("abbbbbbbbbbbbcccccccccccccddddddrrrrrrrrrrrrrrrrrrrffffffffeRRRRRRRRR"))
 }
 
 func FindOdd(seq []int) int {
@@ -178,7 +178,7 @@ func NoSpace(word string) string {
 
 //"abbbcc" -> "a1bbb3cc2"
 
-func convert(name string) string {
+func Convert(name string) string {
 	counter := 0
 	result := ""
 	for i := 0; i < len(name); i++ {
@@ -188,9 +188,6 @@ func convert(name string) string {
 		if i == len(name)-1 || name[i] != name[i+1] {
 			result += strconv.Itoa(counter)
 		}
-
-		fmt.Println(counter)
-
 	}
 
 	return result
