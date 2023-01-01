@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -9,7 +10,7 @@ func main() {
 	//arr := []int{0, 1, 0, 1, 0}
 	//fmt.Println(FindOdd(arr))
 
-	fmt.Println(NoSpace(" 8 j 8   mBliB8g  imjB8B8  jl  B"))
+	fmt.Println(convert("abbbcc"))
 }
 
 func FindOdd(seq []int) int {
@@ -173,4 +174,24 @@ func RowSumOddNumbers(n int) int {
 func NoSpace(word string) string {
 	word = strings.ReplaceAll(word, " ", "")
 	return strings.TrimSpace(word)
+}
+
+//"abbbcc" -> "a1bbb3cc2"
+
+func convert(name string) string {
+	counter := 0
+	result := ""
+	for i := 0; i < len(name); i++ {
+		counter = strings.Count(name, string(name[i]))
+
+		result += string(name[i])
+		if i == len(name)-1 || name[i] != name[i+1] {
+			result += strconv.Itoa(counter)
+		}
+
+		fmt.Println(counter)
+
+	}
+
+	return result
 }
