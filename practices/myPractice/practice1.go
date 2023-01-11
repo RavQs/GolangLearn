@@ -1,29 +1,17 @@
-package main
+package myPractice
 
 import "fmt"
 
-func main() {
-	//fake := []int{2, 4, 0, 100, 4, 11, 2602, 36}
-	//fmt.Println(FindOutlier(fake))
-
-	//fmt.Println(InAscOrder([]int{21, 12, 4, 7, 19}))
-
-	fmt.Println(Gimme([3]int{1, 2, 3}))
-}
-
 func FindOutlier(integers []int) int {
-	arr2 := make([]string, 3)
 	fakeOddNum := 0
 	fakeEvenNum := 0
 	counter := 0
 
 	for _, l := range integers {
 		if l%2 == 0 || l == 2 {
-			arr2 = append(arr2, "even")
 			fakeOddNum = l
 			counter++
 		} else {
-			arr2 = append(arr2, "odd")
 			fakeEvenNum = l
 			counter--
 		}
@@ -31,9 +19,8 @@ func FindOutlier(integers []int) int {
 
 	if counter > 0 {
 		return fakeEvenNum
-	} else {
-		return fakeOddNum
 	}
+	return fakeOddNum
 }
 
 func InAscOrder(numbers []int) bool {
@@ -64,5 +51,24 @@ func Gimme(array [3]int) int {
 	}
 
 	return 0
+}
 
+func DigitalRoot(n int) int {
+	// Если число больше 100 число отсылается в метод через цикл
+	// 16
+	// Если число < 10 return
+	tempNum := 0
+	result := 0
+	for n != 0 {
+		tempNum = n % 10
+		result += tempNum
+		n = n / 10
+		fmt.Println(n)
+	}
+
+	if result >= 10 {
+		result = DigitalRoot(result)
+	}
+
+	return result
 }

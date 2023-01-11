@@ -1,17 +1,11 @@
-package main
+package myPractice
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 )
-
-func main() {
-	//arr := []int{0, 1, 0, 1, 0}
-	//fmt.Println(FindOdd(arr))
-
-	fmt.Println(Convert("abbbbbbbbbbbbcccccccccccccddddddrrrrrrrrrrrrrrrrrrrffffffffeRRRRRRRRR"))
-}
 
 func FindOdd(seq []int) int {
 	counter := 0
@@ -176,9 +170,9 @@ func NoSpace(word string) string {
 	return strings.TrimSpace(word)
 }
 
-//"abbbcc" -> "a1bbb3cc2"
-
 func Convert(name string) string {
+	//"abbbcc" -> "a1bbb3cc2"
+
 	counter := 0
 	result := ""
 	for i := 0; i < len(name); i++ {
@@ -191,4 +185,19 @@ func Convert(name string) string {
 	}
 
 	return result
+}
+
+func FindMaxMin(arr []int) (min, max int) {
+	min = math.MaxInt32
+	max = math.MinInt32
+
+	for _, item := range arr {
+		if max < item {
+			max = item
+		}
+		if min > item {
+			min = item
+		}
+	}
+	return min, max
 }

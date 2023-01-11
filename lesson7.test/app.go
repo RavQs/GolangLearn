@@ -1,6 +1,6 @@
 package main
 
-//Test
+//Tests
 
 func main() {
 
