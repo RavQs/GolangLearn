@@ -1,8 +1,4 @@
-package main
-
-import (
-	"fmt"
-)
+package components
 
 var _ User = &user{}
 
@@ -32,10 +28,4 @@ func NewUser(email, username, password string) User { //Реализация о�
 	}
 
 	return &u
-}
-
-func main() {
-	u := NewUser("babo@gmail", "babo228", "idkHowToPass")
-
-	fmt.Println(u)
 }
